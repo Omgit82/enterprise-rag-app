@@ -114,7 +114,7 @@ if prompt := st.chat_input("Ask a question about your document..."):
                 
                 client = genai.Client(api_key=api_key)
                 response = client.models.generate_content(
-                    model='gemini-3.8-flash', # Using the highly stable 1.5-flash model
+                    model='gemini-3.5-flash', 
                     contents=system_prompt,
                 )
                 
