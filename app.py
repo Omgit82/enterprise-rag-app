@@ -40,7 +40,7 @@ if uploaded_file and api_key:
     
     if st.session_state.collection_name != collection_name:
         with st.sidebar.status("Processing Document..."):
-            collection = chroma_client.create_collection(name=collection_name)
+            collection = chroma_client.get_or_create_collection(name=collection_name)
             reader = PdfReader(uploaded_file)
             
             chunk_id_counter = 0
